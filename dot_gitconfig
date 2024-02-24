@@ -3,4 +3,4 @@
 	email = tudortimi@users.noreply.github.com
 	signingkey = B925D752A6E402AF
 [init]
-	templatedir = /home/tudor/git-templates
+	templatedir = ~/git-templates
