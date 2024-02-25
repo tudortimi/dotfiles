@@ -6,3 +6,5 @@
 	templatedir = ~/.git-templates
 [rerere]
 	enabled = true
+[branch]
+	sort = -committerdate
