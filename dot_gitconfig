@@ -4,3 +4,5 @@
 	signingkey = B925D752A6E402AF
 [init]
 	templatedir = ~/.git-templates
+[rerere]
+	enabled = true
