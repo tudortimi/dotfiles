@@ -1,4 +1,4 @@
-source ~/.bashrc.d/.skel.bashrc
+source {{ .bashrcSkel }}
 
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
