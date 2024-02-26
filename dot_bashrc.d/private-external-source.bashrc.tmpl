@@ -1,0 +1,3 @@
+{{- if hasKey . "privateExternalSource" }}
+source ~/{{- .privateExternalSource.name }}/bashrc
+{{- end }}
