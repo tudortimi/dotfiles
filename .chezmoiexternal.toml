@@ -1,6 +1,0 @@
-{{- if hasKey . "privateExternalSource" }}
-{{"["}}{{- .privateExternalSource.name | quote }}{{"]"}}
-    type = "archive"
-    url = {{ .privateExternalSource.url | quote }}
-    refreshPeriod = "24h"
-{{- end }}

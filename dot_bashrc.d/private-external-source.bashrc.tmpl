@@ -1,5 +1,0 @@
-{{- if hasKey . "privateExternalSource" }}
-if {{"["}} -f ~/{{- .privateExternalSource.name }}/bashrc {{"]"}}; then
-    source ~/{{- .privateExternalSource.name }}/bashrc
-fi
-{{- end }}
