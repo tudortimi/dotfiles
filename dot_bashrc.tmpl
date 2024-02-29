@@ -1,5 +1,11 @@
 source ~/.bashrc.d/.skel.bashrc
 
+# Fix tab completion of variables
+_minimal() {
+    [[ $2 == "$"* ]] || compopt -o filenames
+    compopt -o bashdefault -o default
+}
+
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
 
