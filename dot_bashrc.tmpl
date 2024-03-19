@@ -6,8 +6,9 @@ _minimal() {
     compopt -o bashdefault -o default
 }
 
-# Fix tab completion of `cd` command with variable (e.g. `cd $HOME`)
+# Fix tab completion of directory change command with variable (e.g. `cd $HOME`)
 complete -r cd
+complete -r pushd
 
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
