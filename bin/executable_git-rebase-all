@@ -1,0 +1,17 @@
+#!/bin/env bash
+
+upstream=master
+
+if [ "$(git branch --show-current)" != "$upstream" ]; then
+    echo "The current branch is not '$upstream'"
+    exit 1
+fi
+
+for branch in $(git for-each-ref --format='%(refname:short)' refs/heads); do
+    if [ "$branch" = "$upstream" ]; then
+        continue
+    fi
+    git rebase $upstream $branch || (echo "Cannot rebase $branch automatically"; git rebase --abort)
+done
+
+git checkout $upstream
