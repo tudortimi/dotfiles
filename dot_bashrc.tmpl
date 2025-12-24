@@ -22,4 +22,6 @@ do
     source "$file"
 done
 
-eval "$(chezmoi completion bash)"
+if command -v chezmoi &> /dev/null; then
+    eval "$(chezmoi completion bash)"
+fi
