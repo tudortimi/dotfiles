@@ -10,7 +10,9 @@ _minimal() {
 complete -r cd
 complete -r pushd
 
-eval "$(starship init bash)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
 eval "$(direnv hook bash)"
 
 for file in ~/.bashrc.d/*.bashrc;
