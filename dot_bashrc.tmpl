@@ -10,12 +10,18 @@ _minimal() {
 complete -r cd
 complete -r pushd
 
-eval "$(starship init bash)"
-eval "$(direnv hook bash)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
+if command -v direnv &> /dev/null; then
+    eval "$(direnv hook bash)"
+fi
 
 for file in ~/.bashrc.d/*.bashrc;
 do
     source "$file"
 done
 
-eval "$(chezmoi completion bash)"
+if command -v chezmoi &> /dev/null; then
+    eval "$(chezmoi completion bash)"
+fi
